@@ -18,8 +18,8 @@ import java.util.logging.Logger;
 public class Safetyinstructions {
 
     public static void main(String[] args) throws IOException {
-        File source = new File("G:\\Product Content\\PRODUCTS\\0001030\\Safetyinstruction_0001030_20150115.pdf");
-        File dir = new File("G:\\Product Content\\PRODUCTS\\");
+        File source = new File("X:\\Smartwares - Product Content\\PRODUCTS\\0001030\\Safetyinstruction_0001030_20150115.pdf");
+        File dir = new File("X:\\Smartwares - Product Content\\PRODUCTS\\");
         FileWriter fw = new FileWriter("H:/Logs/Safetyinstructions.log", true);
         BufferedWriter bw = new BufferedWriter(fw);
         SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
@@ -41,7 +41,8 @@ public class Safetyinstructions {
                 }
             });
 
-            if (subFiles.length == 0) {
+            if (subFiles.length == 0 &&
+                    new Date(subDir.lastModified()).after(new Date(new Date().getTime() - (1 * 1000 * 60 * 60 * 24)))) {
                 String sap = subDir.getName();
                 if (sap.length() == 7) {
                     File dest = new File(subDir.getAbsolutePath() + "\\Safetyinstruction_" + sap + "_20150115.pdf");
