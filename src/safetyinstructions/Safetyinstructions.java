@@ -18,8 +18,8 @@ import java.util.logging.Logger;
 public class Safetyinstructions {
 
     public static void main(String[] args) throws IOException {
-        File source = new File("X:\\Smartwares - Product Content\\PRODUCTS\\0001030\\Safetyinstruction_0001030_20150115.pdf");
-        File dir = new File("X:\\Smartwares - Product Content\\PRODUCTS\\");
+        File source = new File("\\\\172.16.55.197\\design\\Smartwares - Product Content\\PRODUCTS\\0001030\\Safetyinstruction_0001030_20150115.pdf");
+        File dir = new File("\\\\172.16.55.197\\design\\Smartwares - Product Content\\PRODUCTS\\");
         FileWriter fw = new FileWriter("H:/Logs/Safetyinstructions.log", true);
         BufferedWriter bw = new BufferedWriter(fw);
         SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
